@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit_btn").click(function(){
+                var firstName = $('#first_name').val();
+                var lastName = $('#last_name').val();
+                var desc = $('#description').val();
+                $('#contact_card_list').append("<div id='contact_card'><h3>" + firstName + " " + lastName + "</h3><h3 id='desc_toggle'>" + desc + "</h3></div>");
+                $("#first_name").val("");
+                $("#last_name").val("");
+                $("#description").val("");
+                return false;
+            });
+            $(document).on("click", '#contact_card', function(){
+                $(this).children().toggle();
+            }); 
+        });
+    </script>    
+</head>
+<body>
+    <div id="left-content">
+        <form id="contact_form">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" id="first_name" placeholder="First Name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+            <label for="description">Description:</label>        
+            <textarea name="description" id="description" form="contact_form" rows="10" cols="20" placeholder="Enter description:"></textarea>    
+            <button id="submit_btn">Add User</button>
+        </form>
+    </div>
+    <div id="contact_card_list">
+    </div>
+    
+</body>
+</html>    

@@ -1,0 +1,22 @@
+#contact_form {
+    width: 240px;
+    padding: 10px;
+    margin: 10px;
+}
+#contact_card_list {
+    margin-left: 300px;
+    position: absolute;
+    vertical-align: top;
+}
+#desc_toggle {
+    display: none;
+}
+#contact_card {
+    outline: 2px solid black;
+    width: 200px;
+    height: 100px;
+    vertical-align: top;
+}
+#left-content {
+    display: inline;
+}
